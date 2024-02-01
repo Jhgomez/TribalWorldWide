@@ -1,10 +1,10 @@
-package okik.tech.prueba.ui.theme.data
+package okik.tech.prueba.data
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import okik.tech.prueba.ui.theme.domain.Category
-import okik.tech.prueba.ui.theme.domain.ChallengeRepository
+import okik.tech.prueba.domain.Category
+import okik.tech.prueba.domain.ChallengeRepository
 
 class ChallengeRepositoryImpl(
     private val service: Service,

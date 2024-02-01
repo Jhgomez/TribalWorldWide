@@ -6,8 +6,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import okik.tech.prueba.ui.theme.domain.Category
-import okik.tech.prueba.ui.theme.domain.ChallengeRepository
+import okik.tech.prueba.domain.Category
+import okik.tech.prueba.domain.ChallengeRepository
 import javax.inject.Inject
 
 @HiltViewModel

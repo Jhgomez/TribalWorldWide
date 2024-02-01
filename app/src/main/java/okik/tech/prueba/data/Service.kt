@@ -1,4 +1,4 @@
-package okik.tech.prueba.ui.theme.data
+package okik.tech.prueba.data
 
 import retrofit2.Response
 import retrofit2.http.GET

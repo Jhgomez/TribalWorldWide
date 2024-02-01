@@ -1,4 +1,4 @@
-package okik.tech.prueba.ui.theme.domain
+package okik.tech.prueba.domain
 
 interface ChallengeRepository {
     suspend fun getCategories(): List<Category>

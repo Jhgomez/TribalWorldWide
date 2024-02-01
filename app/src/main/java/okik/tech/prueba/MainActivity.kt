@@ -5,8 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.ScrollState
-import androidx.compose.foundation.gestures.ScrollableState
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,7 +17,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -28,9 +25,6 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dagger.hilt.android.AndroidEntryPoint
 import okik.tech.prueba.ui.theme.PruebaTheme
-import okik.tech.prueba.ui.theme.domain.Category
-import okik.tech.prueba.ui.theme.domain.ChallengeRepository
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -53,7 +47,7 @@ class MainActivity : ComponentActivity() {
                             val categories = challengeViewModel.categories.collectAsStateWithLifecycle().value
                             if (categories.isNotEmpty()) {
                                 Spacer(modifier = Modifier.height(16.dp))
-                                categories.forEach { category ->
+                                categories.forEach {  category ->
                                     Card(modifier = Modifier
                                         .fillMaxWidth()
                                         .height(48.dp)

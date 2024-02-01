@@ -1,4 +1,4 @@
-package okik.tech.prueba.ui.theme.di
+package okik.tech.prueba.di
 
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -7,9 +7,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import okik.tech.prueba.ui.theme.data.ChallengeRepositoryImpl
-import okik.tech.prueba.ui.theme.data.Service
-import okik.tech.prueba.ui.theme.domain.ChallengeRepository
+import okik.tech.prueba.data.ChallengeRepositoryImpl
+import okik.tech.prueba.data.Service
+import okik.tech.prueba.domain.ChallengeRepository
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
