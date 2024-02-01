@@ -9,7 +9,6 @@ import okik.tech.prueba.ui.theme.domain.ChallengeRepository
 class ChallengeRepositoryImpl(
     private val service: Service,
     private val defaultDispatcher: CoroutineDispatcher = Dispatchers.IO
-
 ): ChallengeRepository {
 
     override suspend fun getCategories(): List<Category> {
