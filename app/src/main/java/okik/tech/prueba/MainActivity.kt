@@ -8,9 +8,11 @@ import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.gestures.ScrollableState
 import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
@@ -44,20 +46,26 @@ class MainActivity : ComponentActivity() {
                         color = MaterialTheme.colorScheme.background
                     ) {
                         Column(
-                            modifier = Modifier.fillMaxSize().verticalScroll(ScrollState(0))
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .verticalScroll(ScrollState(0))
                         ) {
                             val categories = challengeViewModel.categories.collectAsStateWithLifecycle().value
                             if (categories.isNotEmpty()) {
+                                Spacer(modifier = Modifier.height(16.dp))
                                 categories.forEach { category ->
                                     Card(modifier = Modifier
                                         .fillMaxWidth()
-                                        .height(48.dp)) {
+                                        .height(48.dp)
+                                        .padding(horizontal = 16.dp)
+                                    ) {
                                         Text(
                                             modifier = Modifier.align(Alignment.CenterHorizontally),
                                             text = category.name,
                                             fontSize = 24.sp
                                         )
                                     }
+                                    Spacer(modifier = Modifier.height(16.dp))
                                 }
                             }
                         }
