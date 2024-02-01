@@ -19,11 +19,19 @@ import javax.inject.Singleton
 class ChallengeModule {
     @Provides @Singleton
     fun providesService(): Service {
+        val logging = HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
+
+        val client = OkHttpClient.Builder()
+            .addInterceptor(logging)
+            .build()
 
         val moshi = Moshi.Builder()
             .build()
 
         return Retrofit.Builder()
+            .client(client)
             .baseUrl("https://api.chucknorris.io/jokes/")
             .addConverterFactory(MoshiConverterFactory.create(
                 moshi
